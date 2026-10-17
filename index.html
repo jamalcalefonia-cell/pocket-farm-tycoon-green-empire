@@ -10,7 +10,16 @@
     <link rel="icon" href="./assets/share/icon.png" />
   </head>
   <body>
-    <div id="app"><div class="initial-loader"><img src="./assets/share/icon.png" alt="الإمبراطورية الخضراء" /><h1>مزرعتك في طريقها إلى الحياة</h1><div class="loading-track"></div><p>نجهّز الحقول والمخزن…</p></div></div>
+    <div id="boot-loader" class="boot-loader" aria-live="polite">
+      <img src="./assets/share/icon.png" alt="الإمبراطورية الخضراء" />
+      <span class="eyebrow">POCKET FARM TYCOON</span>
+      <h1>مزرعتك في طريقها إلى الحياة</h1>
+      <div class="boot-progress"><i id="boot-progress-bar"></i></div>
+      <p id="boot-status">نجهّز الحقول والمخزن…</p>
+      <small id="boot-time">الوقت المنقضي: 0 ث</small>
+      <small>يتم التحميل مرة واحدة، ثم يمكنك اللعب دون اتصال بعد اكتمال التخزين.</small>
+    </div>
+    <div id="app"></div>
     <noscript>يرجى تفعيل JavaScript لتشغيل اللعبة. لا تحتاج إلى حساب.</noscript>
     <script type="module" src="/src/main.ts"></script>
   </body>

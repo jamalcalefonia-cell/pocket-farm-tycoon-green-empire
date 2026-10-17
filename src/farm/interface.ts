@@ -41,7 +41,7 @@ export class FarmInterface {
         <div class="sidebar-bottom"><div class="mini-sprout">${icon('leaf')}</div><strong>من بذرة… إلى إمبراطورية</strong><p>استثمارات صغيرة. حصاد كبير.</p><span class="local-label"><i></i> لعب فردي · حفظ محلي</span></div>
       </aside>
       <div class="workspace">
-        <header class="topbar"><div class="breadcrumb">إمبراطوريتك <span>/</span> <b id="page-breadcrumb">مزرعتي</b></div><div class="top-actions"><span id="saved-status">${icon('check')} محفوظ محليًا</span><button class="icon-btn" data-action="save" aria-label="حفظ اللعبة">${icon('save')}</button><button class="icon-btn" data-action="help" aria-label="دليل اللعب">${icon('help')}</button><button class="avatar" data-page="brand" aria-label="العلامة التجارية">م</button></div></header>
+        <header class="topbar"><div class="breadcrumb">إمبراطوريتك <span>/</span> <b id="page-breadcrumb">مزرعتي</b></div><div class="top-actions"><button class="install-btn" data-action="install">${icon('download')} تثبيت اللعبة</button><span id="saved-status">${icon('check')} محفوظ محليًا</span><button class="icon-btn" data-action="save" aria-label="حفظ اللعبة">${icon('save')}</button><button class="icon-btn" data-action="help" aria-label="دليل اللعب">${icon('help')}</button><button class="avatar" data-page="brand" aria-label="العلامة التجارية">م</button></div></header>
         <main>
           <div class="page-heading"><div><div class="eyebrow">POCKET FARM TYCOON · GREEN EMPIRE</div><h1 id="page-title">مزرعتك، بداية حكاية كبيرة</h1><p id="page-description">كل بذرة تزرعها اليوم، تقرّبك من إمبراطوريتك غدًا.</p></div><div class="day-badge" id="weather-header"></div></div>
           <section class="stats-strip" id="stats-strip"></section>
@@ -54,6 +54,7 @@ export class FarmInterface {
             </div>
             <aside class="farm-widgets"><section class="widget seed-widget"><div class="widget-heading"><h2>${icon('seed')} ماذا ستزرع اليوم؟</h2><button data-page="market">شراء بذور ${icon('arrow')}</button></div><div class="seed-list" id="seed-list"></div><div id="seed-detail"></div></section><section class="widget daily-widget" id="daily-widget"></section><section class="tip-widget">${icon('leaf')}<div><strong>جيران جيدون، حصاد أفضل</strong><p>ازرع الثوم بجوار الخيار لمكافأة إنتاج محدودة. هذه قاعدة مبسطة في اللعبة، وليست ضمانًا علميًا للحماية من الآفات.</p></div></section></aside>
           </div><div class="farm-bottom"><section class="widget" id="contract-preview"></section><section class="widget" id="progress-widget"></section></div></section>
+          <section class="home-details" aria-label="دليل سريع للمزرعة"><article><b>${icon('seed')} ابدأ بمحصول سريع</b><p>ازرع الخيار، اسقه، ثم احصده بعد اكتمال المؤقت.</p></article><article><b>${icon('market')} حوّل الحصاد إلى رصيد</b><p>راجع السعر والإجمالي قبل تأكيد البيع، ثم اشترِ بذورًا جديدة.</p></article><article><b>${icon('save')} تقدمك محفوظ</b><p>الحفظ محلي على هذا الجهاز، ويمكنك تصدير نسخة احتياطية من الإعدادات.</p></article><article><b>${icon('download')} ثبّتها للفتح السريع</b><p>اضغط «تثبيت اللعبة» إذا ظهر خيار التثبيت في متصفحك.</p></article></section>
           <section id="content-section" hidden></section>
           <footer>ازرع على مهل. فكّر على المدى الطويل. <span>لا مشتريات مدفوعة · تقدمك محفوظ على هذا المتصفح فقط</span></footer>
         </main>
@@ -133,7 +134,7 @@ export class FarmInterface {
     if (!this.dialog.open) this.dialog.showModal()
   }
   private welcome() {
-    this.root.querySelector('#welcome-layer')!.innerHTML = `<div class="welcome-card"><div class="welcome-art" style="background-image:url('${cover}')"></div><div class="welcome-body"><img src="${logo}" alt="شعار المزرعة"/><span class="eyebrow">POCKET FARM TYCOON</span><h1>إمبراطوريتك تبدأ ببذرة</h1><p>قطعة أرض صغيرة، 150 عملة، وحلم كبير.<br>ازرع الخيار، اسقِه، واحصد أول أرباحك.</p><div class="welcome-steps"><span>${icon('seed')} ازرع</span><span>${icon('water')} اسقِ</span><span>${icon('harvest')} احصد</span><span>${icon('coin')} تاجر</span></div>${btn('ابدأ مزرعتي', 'start', '', 'primary wide')}<small>دون حساب، دون مشتريات مدفوعة. الحفظ على هذا الجهاز فقط.</small></div></div>`
+    this.root.querySelector('#welcome-layer')!.innerHTML = `<div class="welcome-card"><div class="welcome-art" style="background-image:url('${cover}')"></div><div class="welcome-body"><img src="${logo}" alt="شعار المزرعة"/><span class="eyebrow">POCKET FARM TYCOON</span><h1>إمبراطوريتك تبدأ ببذرة</h1><p>قطعة أرض صغيرة، 150 عملة، وحلم كبير.<br>ازرع الخيار، اسقِه، واحصد أول أرباحك.</p><div class="welcome-steps"><span>${icon('seed')} ازرع</span><span>${icon('water')} اسقِ</span><span>${icon('harvest')} احصد</span><span>${icon('coin')} تاجر</span></div>${btn('ابدأ مزرعتي', 'start', '', 'primary wide')}<button class="btn install-welcome" data-action="install">${icon('download')} تنزيل / تثبيت اللعبة</button><small>دون حساب أو مشتريات مدفوعة. الحفظ على هذا الجهاز، والتثبيت يضيف أيقونة لفتحها بسرعة.</small></div></div>`
   }
   private cropArt(id: string, small = false) {
     const c = crops[id] ?? products[id]
@@ -233,6 +234,11 @@ export class FarmInterface {
       const payload: Record<string, unknown> = { ...target.dataset }; delete payload.action
       for (const k of ['index', 'quantity']) if (payload[k] !== undefined) payload[k] = Number(payload[k])
       if (a === 'close') this.dialog.close()
+      else if (a === 'install') {
+        const install = (window as any).__installPwa as (() => Promise<boolean>) | undefined
+        if (install) install().then(ok => this.toast(ok ? 'تم تثبيت اللعبة على جهازك.' : 'يمكنك التثبيت من قائمة المتصفح إذا لم يظهر الطلب.'))
+        else this.modal('تثبيت اللعبة', '<p>افتح قائمة المتصفح ثم اختر «إضافة إلى الشاشة الرئيسية» أو «تثبيت التطبيق». بعد التثبيت ستفتح اللعبة أسرع ويمكن تشغيلها دون اتصال بعد التحميل الأول.</p><div class="button-pair"><button class="btn primary" data-action="close">حسنًا</button></div>')
+      }
       else if (a === 'start') { this.handler('start'); this.root.querySelector<HTMLElement>('#welcome-layer')!.hidden = true }
       else if (a === 'saleDialog') this.saleDialog(String(payload.product), String(payload.channel ?? 'market'))
       else if (a === 'purchaseDialog') this.purchaseDialog(String(payload.crop))

@@ -1,4 +1,5 @@
 import './styles/main.css'
+import './styles/pwa-improvements.css'
 import { Audio as GameAudio } from './engine/audio'
 import { GameLoop } from './engine/loop'
 import { action, tick, createState } from './farm/engine'
@@ -6,8 +7,38 @@ import { loadState, saveState, exportSave, importSave, recoverSave } from './far
 import { FarmInterface } from './farm/interface'
 import { FarmScene } from './farm/scene'
 
+type InstallPrompt = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }> }
+let installPrompt: InstallPrompt | null = null
+window.addEventListener('beforeinstallprompt', event => {
+  event.preventDefault()
+  installPrompt = event as InstallPrompt
+  document.dispatchEvent(new CustomEvent('pwa-install-available'))
+})
+window.addEventListener('appinstalled', () => { installPrompt = null; document.dispatchEvent(new CustomEvent('pwa-installed')) })
+;(window as any).__installPwa = async () => {
+  if (!installPrompt) return false
+  await installPrompt.prompt()
+  const choice = await installPrompt.userChoice
+  installPrompt = null
+  return choice.outcome === 'accepted'
+}
+
+const bootStarted = performance.now()
+const bootLoader = document.querySelector<HTMLElement>('#boot-loader')
+const bootBar = document.querySelector<HTMLElement>('#boot-progress-bar')
+const bootStatus = document.querySelector<HTMLElement>('#boot-status')
+const bootTime = document.querySelector<HTMLElement>('#boot-time')
+const bootTimer = window.setInterval(() => {
+  if (bootTime) bootTime.textContent = `الوقت المنقضي: ${((performance.now() - bootStarted) / 1000).toFixed(1)} ث`
+}, 100)
+const bootStep = (percent: number, status: string) => {
+  if (bootBar) bootBar.style.width = `${percent}%`
+  if (bootStatus) bootStatus.textContent = status
+}
+
 async function boot() {
   const loaded = loadState()
+  bootStep(18, 'نقرأ مزرعتك المحفوظة بأمان…')
   let state = loaded.state
   let scene: FarmScene | undefined
   let audio: GameAudio | undefined
@@ -73,10 +104,13 @@ async function boot() {
     }
   })
   if (loaded.warning) ui.toast(loaded.warning, true)
+  bootStep(42, 'نرتب الشاشات والمخزن…')
   document.body.classList.toggle('reduced-motion', state.settings.reducedMotion)
   scene = new FarmScene(document.querySelector('#farm-canvas')!, state, index => ui.selectPlot(index))
   ui.onChangePage = page => { scene!.visible = page === 'farm'; if (page === 'farm') scene!.resize() }
+  bootStep(58, 'نحمّل مشهد المزرعة ثلاثي الأبعاد…')
   await scene.load()
+  bootStep(92, 'نجهّز أدوات اللعب والحفظ المحلي…')
   let tickAccumulator = 0
   const loop = new GameLoop({
     step: dt => {
@@ -97,6 +131,10 @@ async function boot() {
   if ('serviceWorker' in navigator && !import.meta.env.DEV) {
     navigator.serviceWorker.register('./sw.js').catch(() => ui.toast('اللعب متاح؛ تعذر تجهيز وضع عدم الاتصال على هذا المتصفح.', true))
   }
+  bootStep(100, 'اكتملت الجاهزية — مزرعتك تنتظرك.')
+  window.clearInterval(bootTimer)
+  if (bootLoader) { bootLoader.style.opacity = '0'; bootLoader.style.pointerEvents = 'none' }
+  window.setTimeout(() => bootLoader?.remove(), 320)
   ;(window as any).__farm = { get state() { return state }, ui, scene, action: (type: string, payload: any, now?: number) => { const result = action(state, type, payload, now); ui.refresh(true); scene?.sync(); return result }, save: () => save() }
   if (import.meta.env.DEV) {
     const [{ registerGameTuning }, { tuning }] = await Promise.all([import('../scripts/manus-tuning/adapter.js'), import('./game/tuning')])

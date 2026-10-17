@@ -21,6 +21,7 @@ const paths: Record<string, string> = {
   check: '<path d="m5 12 4 4L20 5"/>',
   arrow: '<path d="M20 12H4m6-6-6 6 6 6"/>',
   close: '<path d="m6 6 12 12M6 18 18 6"/>',
+  download: '<path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/>',
   save: '<path d="M3 3h15l3 3v15H3ZM7 3v7h10V3M7 21v-7h10v7"/>',
   sound: '<path d="M3 9h4l5-5v16l-5-5H3ZM16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>',
