@@ -1,6 +1,121 @@
 {
   "version": 2,
-  "groups": {},
+  "groups": {
+    "farm": {
+      "name": "المزرعة والطبيعة",
+      "order": 10
+    },
+    "share": {
+      "name": "هوية اللعبة",
+      "order": 20
+    }
+  },
   "bundles": {},
-  "assets": {}
+  "assets": {
+    "assets/farm/buildings/FBX__Barn.fbx": {
+      "path": "/manus-storage/game/sha256/9c2d565bde1012a8bffb05c641a35dab748f59a7a612209093f12273ae36a365.fbx",
+      "sha256": "sha256:9c2d565bde1012a8bffb05c641a35dab748f59a7a612209093f12273ae36a365",
+      "size": 59484,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/buildings/FBX__Fence.fbx": {
+      "path": "/manus-storage/game/sha256/bc5b6c5afc48cc5b0bed12a57a98c0d2c2984b16fe4805f4a9c7196061854123.fbx",
+      "sha256": "sha256:bc5b6c5afc48cc5b0bed12a57a98c0d2c2984b16fe4805f4a9c7196061854123",
+      "size": 17308,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/buildings/FBX__Silo.fbx": {
+      "path": "/manus-storage/game/sha256/afcc8b63f1db8dfd8f8d1c417c4e5e63d2409d2ef10835920191516d160dac3c.fbx",
+      "sha256": "sha256:afcc8b63f1db8dfd8f8d1c417c4e5e63d2409d2ef10835920191516d160dac3c",
+      "size": 38588,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/buildings/FBX__SmallBarn.fbx": {
+      "path": "/manus-storage/game/sha256/bfa85180603ba1dfcea9f207da6911e8f57f0f559d230f8417fd4dc959564a6a.fbx",
+      "sha256": "sha256:bfa85180603ba1dfcea9f207da6911e8f57f0f559d230f8417fd4dc959564a6a",
+      "size": 50396,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/buildings/FBX__Well.fbx": {
+      "path": "/manus-storage/game/sha256/b5aa5b3f77a9eeba740a4ac4d58bac1ae08b7073424cbfcee0c215cbbd79210c.fbx",
+      "sha256": "sha256:b5aa5b3f77a9eeba740a4ac4d58bac1ae08b7073424cbfcee0c215cbbd79210c",
+      "size": 68316,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/buildings/FBX__Windmill.fbx": {
+      "path": "/manus-storage/game/sha256/5dddd661f5ad3b198a4f3235611088e9fc0ad473d35182c4d4362c7f2253916e.fbx",
+      "sha256": "sha256:5dddd661f5ad3b198a4f3235611088e9fc0ad473d35182c4d4362c7f2253916e",
+      "size": 39436,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/nature/FBX__Bush1.fbx": {
+      "path": "/manus-storage/game/sha256/f358e2190ededb4b7086afb80712016c1a95de507471abd834570c8ca101bc85.fbx",
+      "sha256": "sha256:f358e2190ededb4b7086afb80712016c1a95de507471abd834570c8ca101bc85",
+      "size": 17612,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/nature/FBX__Grass1.fbx": {
+      "path": "/manus-storage/game/sha256/7dadda8aee7a2af2c9fc86e25c855c745e1fea10ee97d0f0d1e6d3293843b305.fbx",
+      "sha256": "sha256:7dadda8aee7a2af2c9fc86e25c855c745e1fea10ee97d0f0d1e6d3293843b305",
+      "size": 15740,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/nature/FBX__Rock1.fbx": {
+      "path": "/manus-storage/game/sha256/869eef6b5cddd4228e3e0acefe6ce4d307da132708c7cf7c1b819a9ccd788ff0.fbx",
+      "sha256": "sha256:869eef6b5cddd4228e3e0acefe6ce4d307da132708c7cf7c1b819a9ccd788ff0",
+      "size": 15484,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/nature/FBX__Tree1.fbx": {
+      "path": "/manus-storage/game/sha256/9f3514873c2116d0b14032eecb00236657aec7d515166cedc737dcf97faf4abd.fbx",
+      "sha256": "sha256:9f3514873c2116d0b14032eecb00236657aec7d515166cedc737dcf97faf4abd",
+      "size": 24476,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/farm/nature/FBX__Tree2.fbx": {
+      "path": "/manus-storage/game/sha256/a3fbaf7361971f49a76c29870149c466ac916481a0791be75fdfbc08de99e01d.fbx",
+      "sha256": "sha256:a3fbaf7361971f49a76c29870149c466ac916481a0791be75fdfbc08de99e01d",
+      "size": 26060,
+      "assetType": "model",
+      "groupId": "farm"
+    },
+    "assets/share/cover.webp": {
+      "path": "/manus-storage/game/sha256/9db51ac5b22ec79415d72e47108a5d723b7be80201c469695496bc6db34c86e4.webp",
+      "sha256": "sha256:9db51ac5b22ec79415d72e47108a5d723b7be80201c469695496bc6db34c86e4",
+      "size": 234916,
+      "assetType": "image",
+      "groupId": "share"
+    },
+    "assets/share/favicon.png": {
+      "path": "/manus-storage/game/sha256/edb8e9284727ce70095e285edfd81c882efc1dfa7533ac5f6e88c2bfc4a003e3.png",
+      "sha256": "sha256:edb8e9284727ce70095e285edfd81c882efc1dfa7533ac5f6e88c2bfc4a003e3",
+      "size": 3366773,
+      "assetType": "image",
+      "groupId": "share"
+    },
+    "assets/share/icon.png": {
+      "path": "/manus-storage/game/sha256/4cb727bee83bf2a47bf02ad65faffe2529c77ed6aba8b054e4fa2c53b1de810a.png",
+      "sha256": "sha256:4cb727bee83bf2a47bf02ad65faffe2529c77ed6aba8b054e4fa2c53b1de810a",
+      "size": 64100,
+      "assetType": "image",
+      "groupId": "share"
+    },
+    "assets/share/og.png": {
+      "path": "/manus-storage/game/sha256/7f3f4eff3710865b361afaa99434df5221635b446c0e245052aca306dc6d4eb0.png",
+      "sha256": "sha256:7f3f4eff3710865b361afaa99434df5221635b446c0e245052aca306dc6d4eb0",
+      "size": 5559213,
+      "assetType": "image",
+      "groupId": "share"
+    }
+  }
 }

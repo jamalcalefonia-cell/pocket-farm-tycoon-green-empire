@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 2,
+  "title": "Pocket Farm Tycoon: Green Empire",
+  "description": "ازرع واحصد وتاجر وابنِ إمبراطوريتك الخضراء. لعبة إدارة مزرعة عربية فردية بحفظ محلي.",
+  "assets": {
+    "og": "assets/share/og.png",
+    "favicon": "assets/share/icon.png"
+  }
+}

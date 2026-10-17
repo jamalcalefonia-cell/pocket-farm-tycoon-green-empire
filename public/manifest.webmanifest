@@ -1,0 +1,12 @@
+{
+  "name": "Pocket Farm Tycoon: Green Empire",
+  "short_name": "المزرعة الخضراء",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#214e38",
+  "background_color": "#f7f8f3",
+  "icons": [{"src":"./app-icon.png","sizes":"256x256","type":"image/png","purpose":"any"}]
+}

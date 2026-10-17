@@ -1,95 +1,79 @@
-# game-3d starter (three.js + Rapier)
+# Pocket Farm Tycoon: Green Empire
 
-A complete, small 3D game — **Sky Cores**: run, jump and dash across floating islands to collect
-every energy core before the clock runs out, avoiding patrol drones. It exists to be *changed*:
-the engine layer is fixed scaffolding, the game layer is the part you rewrite.
+لعبة إدارة مزرعة عربية فردية قابلة للعب، بمشهد إيزومتري Three.js وواجهة RTL للهواتف والحاسوب. تبدأ بـ150 عملة و12 بذرة خيار و4 بذور ثوم و12 قطعة أرض فارغة. تزرع وتسقي وتنتظر النمو وتحصد إلى المخزن، ثم تبيع وتشتري وتتوسع. لا حسابات ولا مشتريات مدفوعة، ولا مفاتيح سرية في الواجهة.
+
+## اللعب
+
+اضغط «ابدأ مزرعتي». اختر بذور الخيار، ثم انقر قطعة بنية فارغة في المزرعة. اختر أداة الري وانقر المحصول أو اضغط «ري الجميع». يستغرق الخيار نحو20 ثانية بعد الري، وقد يختلف الزمن بحسب الطقس والدفيئة. اختر الحصاد وانقر المحصول الناضج، أو «حصاد الجاهز». افتح السوق، حدد كمية، راجع السعر والإجمالي، وأكد البيع. اشتر بذورًا جديدة ثم زر التطوير والعقود والمهام.
+
+زر التفقد يفتح تفاصيل القطعة ومدة النمو والإنتاج المتوقع والتسميد. على الحاسوب تستطيع تحديد الحقول بأسهم لوحة المفاتيح وتفعيلها بـEnter أو Space بعد تركيز المشهد. على الهاتف تظهر أهم الوجهات في الشريط السفلي، وبقية الشاشات في «المزيد». أداة الزراعة لا تحصد، وأداة الري لا تبيع؛ كل إجراء يوضح نجاحه أو سبب رفضه.
+
+## الأنظمة المنفذة
+
+المحاصيل العشرة هي الخيار والثوم والطماطم والخس والبطاطس والجزر والبصل والفلفل والفراولة والذرة، ببيانات وأسعار ومدد ومتطلبات ماء ومستويات فتح مستقلة. المخزن يحصي البذور والثمار والصناديق والسماد والمنتجات النهائية، ويحجز مكان مخرجات المصنع. عند الامتلاء يبقى الحصاد في الأرض ولا يُحذف. الماء يتجدد من البئر، ويمكن تعبئته مجانًا.
+
+الثوم المجاور للخيار يمنح مكافأة محدودة في معادلة الإنتاج، مع تقريب الوحدات. هذه **قاعدة لعب مبسطة وليست ضمانًا علميًا** لمكافحة النيماتودا أو حماية المحاصيل. السماد يقلص مدة النمو20% ويضيف مكافأة في معادلة العائد. الأرض تتوسع4 قطع كل مرة حتى48. توجد ترقية للسعة والأدوات وكفاءة الماء والدفيئة والمصنع والمتجر والتغليف والسيارة والشاحنة.
+
+السوق يسمح بكمية محددة أو الكمية كلها، ويمنع بيع غير الموجود أو شراء ما يتجاوز المال أو السعة. الأسعار دورية قابلة للتوقع جزئيًا ومقيدة، وتتأثر السمعة بسعر السوق؛ يظهر السعر الفعلي قبل التأكيد. إذا تغيّر السعر قبل تأكيد البيع تُرفض العملية دون خصم المخزون، وتراجع العرض مجددًا. أسعار الصناديق3 عملات والسماد8، من مصدر بيانات واحد في المحرك والواجهة.
+
+العقود تعرض العميل والمنتجات والكميات والمكافأة والمهلة والحالة ومستوى الفتح. قبول العقد يبدأ المهلة؛ تسليمه يخصم المنتجات ويمنح المكافأة مرة واحدة. التسليم قبل نصف المهلة يعطي مكافأة5%، وانتهاء العقد لا ينشئ غرامة اعتباطية. اللوحة تتجدد كل6 ساعات مع حد لسجل العقود القديمة، فلا تنمو بيانات الحفظ بلا نهاية.
+
+العمال المتاحون زارع وسقّاء وحصّاد وأمين مخزن وعامل مصنع وسائق ومدير. يبدأ التوظيف تدريجيًا من المستوى2؛ التنفيذ الآلي يتطلب موارد وأجورًا. عند عدم كفاية المال يتوقف العامل ولا ينشأ دين. حساب العمل أثناء الغياب محدود بخمس دقائق، وليس إمبراطورية تعمل لأيام كاملة دون إشراف. عامل المخزن يضيف سعة، والمدير يخفض الأجور؛ هذه أدوار مبسطة لا محاكاة حركة فعلية لكل موظف.
+
+المصنع يبدأ من المستوى4 ويصنع المخلل والصلصة والمربى والرقائق ودقيق الذرة. لكل وصفة مدخلات وصناديق وتكلفة تشغيل ووقت، وخطان متوازيان لكل مستوى مصنع. التخزين يفحص السعة الصافية بعد التحويل. بعض التصنيع أقل ربحًا من بيع الخام عند أسعار مرتفعة؛ القرار يحتاج إلى حساب لا إلى ضمان ربح.
+
+يمكن تسمية العلامة واختيار رمزها، وفتح متجر وفروع وترقية التغليف. البيع المباشر يتطلب متجرًا وتغليفًا وسمعة10 وصندوقًا لكل وحدة؛ علاوة السعر مقيدة وتعتمد على السمعة والتغليف والفروع. السيارة سعتها60 والشاحنة200؛ تحتاج سائقًا قبل إرسال عقد. يعرض النقل الحمولة والسعة والتكلفة والمدة، ويتحقق من إمكانية الوصول قبل المهلة. تُحجز المواد عند الإرسال وتُمنح مكافأة واحدة عند الوصول.
+
+توجد مستويات وخبرة، ومهام يومية وأسبوعية وإنجازات دائمة للحصاد والبيع والعقود والتصنيع والأرض والتوظيف والسمعة. تتجدد اليومية عند منتصف الليلUTC، والأسبوعية في فتراتUTC ثابتة من سبعة أيام. الإحصائيات تفصل إيرادات المبيعات والعقود عن الهبات ورأس المال، وتعرض المصروفات وصافي التدفق وقيمة المنتجات المخزنة وسجل العمليات وتكاليف المحاصيل الأساسية. الأصول تُسجل كمصروفات نقدية في المحاكاة، وليست قوائم محاسبية مع إهلاك وقيمة دفترية.
+
+## الحفظ وعدم الاتصال
+
+تُحفظ الحالة تلقائيًا بعد الإجراءات وكل5 ثوانٍ وفي مغادرة الصفحة، وتوجد أزرار حفظ وتصدير JSON واستيراد مع تأكيد. الحفظ محلي في هذا المتصفح والموقع، وليس مزامنة بين الأجهزة. نقل الملف يدويًا ممكن. يحتفظ النظام بآخر نسخة سليمة ويتحقق من الحفظ والأنواع والمعرفات والأوقات والكميات. الحفظ التالف لا يُستبدل صامتًا؛ يمكن استرجاع النسخة ثم تأكيد «إصلاح حفظ تالف بالنسخة الحالية» من الإعدادات. إعادة البدء تتطلب تأكيدًا.
+
+المحاصيل المروية تتابع النمو بحسب الوقت المنقضي عند العودة. لا نمو قبل الري الأول، ولا تلف قاسٍ للمحاصيل المنسية. تغيير ساعة النظام ليس حماية خادمية من الغش؛ هذه لعبة محلية فردية. استخدم تبويب لعب واحد لتفادي تعارض نسخ الحفظ في أكثر من تبويب.
+
+يتضمن البناء عامل خدمة وبيانPWA وقائمة تلقائية لملفات التشغيل. بعد فتح النسخة المبنية عبرHTTPS أو localhost واكتمال تحميل الملفات، يعمل إعادة الفتح دون اتصال. لا يكفي فتح index.html مباشرة عبرfile://. المعاينة التطويرية لا تثبت عامل الخدمة؛ الاختبار يجري على بناء dist. تثبيتPWA ودعم التخزين يتوقفان على المتصفح. مسح بيانات الموقع يزيل الحفظ وملفات عدم الاتصال؛ صدّر نسخة احتياطية.
+
+## التشغيل والتطوير
+
+تحتاج Node.js22 أو أحدث وpnpm10.18.0. الأرشيف الكامل يحتوي الأصول الفعلية، ولا يحتاج حسابًا لتشغيل اللعب المحلي.
 
 ```bash
-pnpm install
-pnpm dev      # http://localhost:5173
-pnpm build    # typecheck + production build + JS/font budgets + total-size report
-pnpm test     # unit tests (rules, save, i18n, level)
-pnpm smoke    # after build: headless browser playthrough + screenshots in shots/
+corepack enable
+corepack prepare pnpm@10.18.0 --activate
+pnpm install --frozen-lockfile
+HOST=0.0.0.0 PORT=3000 pnpm dev
 ```
 
-## Layout
+افتح http://localhost:3000. علىWindows استخدم تعيين متغيرات البيئة المناسب أو نفذ pnpm dev؛ الإعداد الافتراضي127.0.0.1:3000.
 
-| Path | Role | Change it? |
-| --- | --- | --- |
-| `src/engine/loop.ts` | Fixed 60 Hz simulation + interpolated rendering | Rarely |
-| `src/engine/input.ts` | Keyboard/mouse, gamepad, touch → one action state | Add actions here |
-| `src/engine/physics.ts` | Rapier world, collider helpers, render interpolation | Rarely |
-| `src/engine/renderer.ts` | WebGL renderer, quality presets, bloom | Rarely |
-| `src/engine/audio.ts` | Music/SFX buses, synthesized SFX, `load()` for files | Add sounds |
-| `src/engine/save.ts` | Versioned localStorage save + leaderboard | Add fields + parsing |
-| `src/engine/i18n.ts` | en / zh-CN, browser detection, saved choice wins | Rarely |
-| `src/engine/assets.ts` | Cached GLTF/texture loading with progress | Use it for models |
-| `src/game/config.ts` | Source defaults and active gameplay configuration | Yes |
-| `src/game/tuning.ts` | Tweak catalog, atomic validation and activation boundaries | Yes |
-| `src/game/rules.ts` | Pure score/lives/clock/win rules (unit tested) | Yes |
-| `src/game/world.ts` | Level layout, sky, lights, islands, stones, lifts | Yes |
-| `src/game/player.ts` | Character controller + game feel + procedural model | Yes |
-| `src/game/*.ts` | Camera, cores, drones, particles, scene orchestration | Yes |
-| `src/ui/`, `src/styles/main.css` | HTML/CSS title, HUD, pause, settings, results | Yes |
-| `src/i18n/*.json` | All player-facing text (both files, same keys) | Yes |
+```bash
+pnpm build       # TypeScript + Vite + مشاركة + قائمة عدم الاتصال
+pnpm test        # اختبارات منطق المزرعة والبنية الموروثة
+pnpm smoke       # اختبار متصفح للنسخة المبنية
+pnpm preview     # المعاينة الإنتاجية على4173
+```
 
-## Rules for changes
+لاختبار المتصفح لأول مرة: `pnpm exec playwright install chromium`. الصور ونتائج التحقق في `shots/`. تفاصيل النتائج الفعلية موثقة في `TEST_RESULTS.md` عند التسليم.
 
-- **Simulation in `step()`, visuals in `render()`/`animate()`.** Gameplay state only changes in
-  fixed steps; read presses there with `input.consume(action)`, never `pressed()`.
-- **Rules stay pure.** Scoring, win/lose and progression go in `rules.ts` with tests; scene code
-  reports events and reads state.
-- **Every visible string is an i18n key** in both `en.json` and `zh-CN.json` (a test enforces
-  matching keys and placeholders). English and Chinese use the bundled Manus CC0 fonts in `public/fonts/`;
-  if you add new Chinese text, check it renders (missing glyphs fall back to system fonts).
-- **UI is HTML/CSS**, not canvas. Keep the game look: display font, outlined text, hard offset
-  shadows, skewed buttons, notched panels. Menus must stay keyboard/gamepad navigable
-  (`data-nav` on focusable controls).
-- **Colliders come from the helpers** in `physics.ts` with the same sizes as the meshes.
-- Keep `npm run build` within the JS/font budgets (`scripts/check-size.mjs`) and `npm run smoke` green.
-  Total game asset size is reported without a hard limit.
+المنطق في `src/farm/engine.ts`، والبيانات في `data.ts`، والحفظ في `storage.ts`، والعرض في `scene.ts`، والشاشات في `interface.ts`، والربط في `src/main.ts`. بقيت وحدات القالب الأصلية غير المستخدمة وأدواتها للحفاظ على بنية المحرك؛ لا تُحمَّل لعبةSky Cores القديمة في نسخة اللعب. الضبط الحي التطويري يستخدم مدير القالب الموجود مع معلمتين بصريتين فقط، ولا يظهر في بناء الإنتاج.
 
-## Controls
+في نسخةManus المستودعية، الملفات الكبيرة الموثقة في assets.lock.json تُستعاد بأدوات المشروع من التخزين المخصص. الأرشيف القابل للتشغيل يتضمنها محليًا. لا تحذف assets.lock.json أو أدوات scripts/manus-game-assets إذا كنت تعمل على النسخةManaged؛ لإعداد نسخةGitHub Pages مستقلة استخدم الأرشيف الكامل أو dist كما هو.
 
-Keyboard/mouse: WASD move, mouse look (click to capture), Space jump (hold = higher), Shift
-sprint, F or left click dash, Esc pause. Gamepad: left stick, right stick, A jump, X/RB dash,
-LB sprint, Start pause. Touch: left-side stick, right-side drag to look, JUMP / DASH buttons.
+## النشر الثابت وGitHub Pages
 
-## Credits
+مجلد`dist` مستقل عن الخادم ومناسب لأي استضافةHTTPS ثابتة. ارفع **كل محتوياته** بما فيهاsw.js وoffline-assets.json وملفالبيان والمجلدassets. استخدم `python3 -m http.server 8080 --directory dist` لفحصه محليًا. المسارات نسبية (`base: './'`) لتعمل تحت مسار مستودعGitHub Pages.
 
-Fonts: ManusCC0 (regular, medium, bold) and ManusCC0 Sans CJK SC — CC0 1.0.
-The bundled Chinese font preserves its 6,547-codepoint repertoire; no font download is required.
-See `public/fonts/ManusCC0-LICENSE.txt`.
-Libraries: three.js (MIT), Rapier (Apache-2.0).
+للنشر عبرGitHub Pages، ضع محتوىdist في فرعgh-pages ثم اختره فيSettings → Pages، أو اضبطActions لبناء المشروع ورفعdist. لا يفعل إنشاء المستودع أو دفعmain نشرPages تلقائيًا. GitHub Pages مناسب لهذه اللعبة الفردية ذات الحفظ المحلي، لكنه **لا يوفر بمفرده خادمًا وقاعدة بيانات** للحسابات أو السوق المشترك. لا توجد أسرار مطلوبة للعب؛ لا تضف مفاتيحAPI إلى الواجهة.
 
-## Preview Tweak
+## الأصول والرخص
 
-`src/game/tuning.ts` is this game's parameter manager. The Addon panel reads its
-catalog; `config.ts` owns source defaults and the active configuration used by gameplay.
-When adapting the game, keep only controls with actual gameplay consumers, and preserve
-stable IDs for unchanged parameters. Define ranges, units and the correct activation
-boundary. Register through `scripts/manus-tuning/adapter.js` only under `import.meta.env.DEV`.
-Keep the Vite plugin and `scripts/__manus__/` helpers intact; production builds exclude
-the browser adapter and never inject the bridge.
+المباني والسياج والبئر والطاحونة من [Quaternius Farm Buildings](https://quaternius.com/packs/farmbuildings.html)، والنباتات والشجر منQuaternius Simple Nature عبرالمكتبة، بترخيصCC0 وفق البيانات المنشورة. استُخدمت نسخFBX المرفقة، والنباتات كُيّفت باللون والقياس ومراحل النمو. تحتفظ مجلدات الأصول بإيصالات الاسترجاع وإشعارات الرخص المتاحة. رموز المنتجات في الواجهة تبسيطات مرئية، وليست نماذج نباتية علمية.
 
-Apply changes preview state only. `LIVE` parameters are read in the next game update;
-`NEXT_ACTION` parameters activate at the relevant jump/dash start; `NEXT_RUN` parameters
-activate in `Game.start`. Model/collider size and gravity are not exposed by this version.
-Do not mutate the source defaults or persist Apply to localStorage. Save with Manus
-checks the snapshot against the current catalog and edits `DEFAULT_CONFIG`, then uses
-the normal Three.js Web build/checkpoint workflow. Keep existing gameplay parameter
-managers when extending an older project; do not create a competing store.
+الغلاف والشعار أصليان مولدان لهذه اللعبة. خطوطManusCC0 المرفقة تحتCC0؛ العربية تستخدم خطوط النظام البديلة. Three.js تحتMIT وRapier المرفق في القالب تحتApache-2.0، والأخير لا يُحمَّل في تجربة المزرعة. راجع`CREDITS.md` والإشعارات المرفقة.
 
-For server-authoritative multiplayer, expose local cosmetic controls only until gameplay
-parameters have explicit server-side development support. The descriptor's GAMEPLAY flag
-is a classification, not server authorization or ranked-score enforcement.
+## حدود الإصدار وما يحتاج تطويرًا
 
-The preview plugin reads the ignored `.manus-webdev/preview-identity.json` v1 projection
-written by the Runtime when initializing, attaching or restoring this project. It contains
-only the resource ID and canonical project directory; private Host bindings and starter
-receipts are not template dependencies. Missing identity disables the bridge.
-The manager latches `tuning.unranked` when non-default GAMEPLAY values become active and
-resets it only at the next run using that run's active values. `Game` snapshots this onto
-`RunState.unranked`; local results cannot save such runs. Preserve this guard when changing
-scoring. When adding online leaderboards, skip submissions for unranked runs and enforce
-eligibility in the authoritative server too; client flags are not proof of a fair score.
+هذه نسخة فردية عملية متكاملة للدورة الزراعية والتجارة والتوسع، **وليست كل تفاصيل لعبة تجارية نهائية**. الطقس والفصول محاكاة دورية مبسطة (شمس وغيوم ومطر ورياح)، والتربة خصبة ثابتة، ولا توجد آفات عشوائية أو موجة حر أو مهرجان وعروض معدات. محاصيل المشهد تستخدم شجيرات/عشبًا مرخصًا مكيفًا، وليست عشرة نماذج فريدة مكتملة. المباني البصرية ليست جميعها مرتبطة بظهور إنشاءات جديدة لكل ترقية.
+
+العمال إداريون بمهام آلية مبسطة دون مستويات منفصلة أو محاكاة حركة. المتجر بيع مباشر يدوي وليس زوارًا متحركين؛ النقل يطبق سعة ومدة وكلفة دون طرق أو وقود مستقل أو ترقيات مفصلة لكل مركبة. لا توجد مزارع متعددة جغرافيًا أو سوق لاعبين أو زيارة أصدقاء أو ترتيب عالمي أو حسابات أو مزامنة. لا موسيقى؛ المؤثرات القصيرة اختيارية وقابلة للكتم. توسيع هذه الأنظمة وموازنة طويلة الأمد واختبارات أجهزة فعلية إضافية هي أعمال لاحقة، وليست أزرارًا معطلة تدّعي التنفيذ.

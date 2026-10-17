@@ -2,3 +2,19 @@ node_modules/
 dist/
 shots/
 /.manus-webdev/preview-identity.json
+# Assets restored from assets.lock.json
+/assets/farm/buildings/FBX__Barn.fbx
+/assets/farm/buildings/FBX__Fence.fbx
+/assets/farm/buildings/FBX__Silo.fbx
+/assets/farm/buildings/FBX__SmallBarn.fbx
+/assets/farm/buildings/FBX__Well.fbx
+/assets/farm/buildings/FBX__Windmill.fbx
+/assets/farm/nature/FBX__Bush1.fbx
+/assets/farm/nature/FBX__Grass1.fbx
+/assets/farm/nature/FBX__Rock1.fbx
+/assets/farm/nature/FBX__Tree1.fbx
+/assets/farm/nature/FBX__Tree2.fbx
+/assets/share/cover.webp
+/assets/share/favicon.png
+/assets/share/icon.png
+/assets/share/og.png

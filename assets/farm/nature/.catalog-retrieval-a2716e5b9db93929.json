@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "archiveSha256": "d33b649b0d9d7d1e26ae09ba3a4ccdeb0b638e96b933c0ba2a7984e0cd49fef1",
+  "archiveSizeBytes": 1381492,
+  "members": [
+    {
+      "member": "FBX__Bush1.fbx",
+      "sha256": "f358e2190ededb4b7086afb80712016c1a95de507471abd834570c8ca101bc85",
+      "sizeBytes": 17612
+    },
+    {
+      "member": "FBX__Grass1.fbx",
+      "sha256": "7dadda8aee7a2af2c9fc86e25c855c745e1fea10ee97d0f0d1e6d3293843b305",
+      "sizeBytes": 15740
+    },
+    {
+      "member": "FBX__Rock1.fbx",
+      "sha256": "869eef6b5cddd4228e3e0acefe6ce4d307da132708c7cf7c1b819a9ccd788ff0",
+      "sizeBytes": 15484
+    },
+    {
+      "member": "FBX__Tree1.fbx",
+      "sha256": "9f3514873c2116d0b14032eecb00236657aec7d515166cedc737dcf97faf4abd",
+      "sizeBytes": 24476
+    },
+    {
+      "member": "FBX__Tree2.fbx",
+      "sha256": "a3fbaf7361971f49a76c29870149c466ac916481a0791be75fdfbc08de99e01d",
+      "sizeBytes": 26060
+    }
+  ],
+  "dependencyCoverage": "glb-gltf-obj-mtl-textureatlas-bmfont-tiled",
+  "limitations": [
+    ".fbx"
+  ],
+  "catalogSources": [
+    {
+      "snapshotId": "catalog-20260924-japan-characters-scene-removal-v1",
+      "catalogPath": "3d-models/vegetation/quaternius-simplenature/assets.zip"
+    }
+  ],
+  "catalogMetadata": [
+    {
+      "snapshotId": "catalog-20260924-japan-characters-scene-removal-v1",
+      "catalogPath": "3d-models/vegetation/quaternius-simplenature/assets.zip",
+      "metadataPath": "3d-models/vegetation/quaternius-simplenature/metadata.json",
+      "metadataSha256": "769faa8f08629680b2fbda48eb0e035f9cce98ee02b03cd1d979695df6454f2a",
+      "archiveSha256": "d33b649b0d9d7d1e26ae09ba3a4ccdeb0b638e96b933c0ba2a7984e0cd49fef1",
+      "source": {
+        "packId": "quaternius:simplenature",
+        "name": "Quaternius • Simple Nature Pack",
+        "url": "https://quaternius.com/packs/simplenature.html",
+        "metadataPath": "3d-models/vegetation/quaternius-simplenature/metadata.json",
+        "metadataSha256": "sha256:769faa8f08629680b2fbda48eb0e035f9cce98ee02b03cd1d979695df6454f2a"
+      },
+      "license": {
+        "id": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attributionRequired": false,
+        "copyrightNoticeRequired": false,
+        "licenseNoticeRequired": false,
+        "modificationNoticeRequired": false,
+        "commercialUseAllowed": true,
+        "editableProjectDistributionAllowed": true,
+        "reusableTemplateDistributionAllowed": true
+      }
+    }
+  ]
+}
