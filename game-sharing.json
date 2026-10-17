@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 2,
+  "publicationOrigin": "https://greenempire-harrgv25.manus.game",
+  "title": "Pocket Farm Tycoon: Green Empire",
+  "description": "ازرع واحصد وتاجر وابنِ إمبراطوريتك الخضراء. لعبة إدارة مزرعة عربية فردية بحفظ محلي.",
+  "defaultCaptions": {},
+  "assets": {
+    "og": {
+      "digest": "sha256:7f3f4eff3710865b361afaa99434df5221635b446c0e245052aca306dc6d4eb0",
+      "path": "share/7f3f4eff3710865b361afaa99434df5221635b446c0e245052aca306dc6d4eb0.png",
+      "mime": "image/png",
+      "width": 2560,
+      "height": 1440,
+      "sizeBytes": 5559213,
+      "sourcePath": "assets/share/og.png"
+    },
+    "favicon": {
+      "digest": "sha256:4cb727bee83bf2a47bf02ad65faffe2529c77ed6aba8b054e4fa2c53b1de810a",
+      "path": "share/4cb727bee83bf2a47bf02ad65faffe2529c77ed6aba8b054e4fa2c53b1de810a.png",
+      "mime": "image/png",
+      "width": 256,
+      "height": 256,
+      "sizeBytes": 64100,
+      "sourcePath": "assets/share/icon.png"
+    }
+  }
+}
